@@ -1,8 +1,10 @@
 # Frilingo
 
-Frilingo is a VS Code extension that translates code annotations, comments, and selected text using local AI models powered by Ollama.
+Translate code, errors, and documentation directly inside VSCode.
 
-The project aims to provide privacy-friendly and offline-first translation directly inside VS Code without requiring cloud APIs.
+🚧 Early development stage
+
+Frilingo helps developers understand code, error messages, comments, documentation, and technical content in their preferred language using local LLMs through Ollama.
 
 ## Features
 
