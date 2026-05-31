@@ -10,80 +10,46 @@ Frilingo helps developers understand code, error messages, comments, documentati
 
 ### Translate Selected Text
 
-Translate selected text directly inside VSCode.
+Translate the current editor selection using a local Ollama model.
 
-```text
-Select text
-↓
-Run command
-↓
-Receive translated result
-```
+### Translate Comments and Annotations
 
-### Generate Code Comments
+Quickly translate documentation, comments, and annotations without leaving the editor.
 
-Generate clear and readable code comments from selected code.
+### Local AI Models
 
-```ts
-const count = map.entry(word).orInsert(0);
-```
+Use local models through Ollama.
 
-```ts
-// Return the existing value for the key.
-// Insert 0 when the key does not exist.
-const count = map.entry(word).orInsert(0);
-```
+Examples:
 
-### Local LLM Support
+- gemma3:4b
+- qwen3:4b
+- llama3.1
 
-Frilingo works with local models through Ollama.
+### Ollama Integration
 
-Supported models include:
+Manage local models directly from VS Code.
 
-- EXAONE
-- Qwen
-- DeepSeek
-- Any Ollama-compatible model
-
-### Korean-First Workflow
-
-Frilingo is designed for developers who frequently work with:
-
-- English documentation
-- Compiler errors
-- Open source projects
-- Technical discussions
-
-## Roadmap
-
-### v0.1
-
-- Translate selected text
-- Ollama integration
-- EXAONE support
-
-### v0.2
-
-- Activity Bar panel
-- Translation history
-
-### v0.3
-
-- Comment generation
-
-### v0.4
-
-- Multi-language support
-
-### v1.0
-
-- Marketplace release
+- Start Ollama
+- List installed models
+- Pull recommended models
+- Check runtime status
 
 ## Requirements
 
-- VSCode
-- Node.js 22+
-- Ollama
+### Install Ollama
+
+Download and install Ollama:
+
+https://ollama.com/download
+
+### Pull a Model
+
+Example:
+
+```bash
+ollama pull gemma3:4b
+```
 
 ## Development
 
@@ -93,23 +59,40 @@ Install dependencies:
 npm install
 ```
 
-Run extension host:
+Run type checking:
 
 ```bash
-F5
+npm run check-types
 ```
 
-Build project:
+Run lint:
 
 ```bash
-npm run compile
+npm run lint
 ```
 
-## Contributing
+Run smoke test:
 
-Contributions are welcome.
+```bash
+npm run test:ollama
+```
 
-Please read the contributing guide before submitting a pull request.
+## Roadmap
+
+- [x] Ollama integration
+- [x] Selection translation
+- [x] Model management
+- [ ] Hover translation
+- [ ] Inline replacement
+- [ ] Multiple language support
+- [ ] Translation caching
+- [ ] User settings
+
+## Known Issues
+
+Some reasoning-oriented models may generate explanations instead of direct translations.
+
+For translation-focused workflows, models such as gemma3 are recommended.
 
 ## License
 
